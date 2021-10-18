@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Eye Care",
+        "img": "https://static.bangkokpost.com/media/content/20200806/3712311.jpg",
+        "description": "Your eyes are an important part of your health. Most people rely on their eyes to see and make sense of the world around them."
+    },
+    {
+        "id": 2,
+        "title": "Medical Checkup",
+        "img": "https://thumbs.dreamstime.com/b/health-check-medicine-doctor-working-computer-interface-as-medical-87871607.jpg",
+        "description": "Regular health exams and tests can help find problems before they start. They also can help find problems early, when your chances for treatment and cure are better."
+    },
+    {
+        "id": 3,
+        "title": "Dental Care",
+        "img": "https://www.apollowhitedental.com/wp-content/uploads/2019/03/dental-clinic-830x553.jpg",
+        "description": "Tooth decay and gum disease are caused by plaque, a sticky combination of bacteria and food. Plaque begins to build up on teeth within a few minutes after eating"
+    },
+    {
+        "id": 4,
+        "title": "Cardiology",
+        "img": "https://thumbs.dreamstime.com/b/red-heart-shape-medical-stethoscope-light-background-top-view-health-care-medicare-cardiology-concept-blue-104679825.jpg",
+        "description": "The basic functioning of the cardiovascular system includes the way the heart processes oxygen and nutrients in the blood, which is called coronary circulation"
+    },
+    {
+        "id": 5,
+        "title": "Laboratory Service",
+        "img": "https://thumbs.dreamstime.com/b/medical-laboratory-microscope-chemistry-biology-lab-test-scientific-research-development-healthcare-concept-background-149837485.jpg",
+        "description": "Medical Laboratory Services is a physician owned and operated laboratory committed to meet the needs of a growing community."
+    },
+    {
+        "id": 6,
+        "title": "Vaccination",
+        "img": "https://ichef.bbci.co.uk/news/976/cpsprodpb/EAD2/production/_114241106_vaccineillus976_rtrs.jpg",
+        "description": "Vaccination is a simple, safe, and effective way of protecting you against harmful diseases, before you come into contact with them."
+    }
+]

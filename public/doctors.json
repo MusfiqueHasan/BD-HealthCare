@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Dr. Ryley Mueller",
+        "designation": "Cardiology",
+        "img": "https://kit.baliniz.com/medicalife/wp-content/uploads/sites/10/elementor/thumbs/working-doctor-2CHWSKM-p87ywkxcfpkg5blmpuvnlnonqjca51b2txyldyyw3k.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Dr. Elisa Hodges",
+        "designation": "Dentist",
+        "img": "https://kit.baliniz.com/medicalife/wp-content/uploads/sites/10/elementor/thumbs/nurse-in-uniform-TEMZTNK-p88aw0uhe46h5wwnecmy2s9blgtf7m3q5dtve79k3k.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Dr. Carlo Hilton",
+        "designation": "General Doctor",
+        "img": "https://kit.baliniz.com/medicalife/wp-content/uploads/sites/10/elementor/thumbs/team-p84s9nl04y47v86w2gyopkn2x6fntqp33jzkjo04xs.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Dr. Tyler Wilkins",
+        "designation": "Cardiology",
+        "img": "https://kit.baliniz.com/medicalife/wp-content/uploads/sites/10/elementor/thumbs/doctor-at-hospital-A4ZVDTT-p89y1qo49llonhdgcfl90uw9ddpmf7xlyi7z2zig3k.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Dr. Denny Barker",
+        "designation": "Urologist",
+        "img": "https://kit.baliniz.com/medicalife/wp-content/uploads/sites/10/elementor/thumbs/smiling-mature-senior-doctor-physician-standing-in-9AR35UM-p87ywnqv07ob45hj9e3jb4z1ioyds4m9ubx1tsupkw.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Dr. Carys Morgan",
+        "designation": "General Doctory",
+        "img": "https://kit.baliniz.com/medicalife/wp-content/uploads/sites/10/elementor/thumbs/handsome-and-confident-young-doctor-in-white-coat-D2PKNW8-p89y1nulp3htonhjswddbdlvl83is4mey49in5mmm8.jpg"
+    }
+]

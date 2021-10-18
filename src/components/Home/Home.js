@@ -3,6 +3,7 @@ import './Home.css'
 import Banner from './Banner/Banner';
 import Info from './Info/Info';
 
+
 const Home = () => {
     return (
         <div>
