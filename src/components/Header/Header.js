@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { GoMailRead, MdPhoneInTalk, FiLogIn, FiLogOut, FaFacebookF, FaYoutube, FaLinkedinIn, AiOutlineGooglePlus } from 'react-icons/all';
+import { Container, Nav, Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { GoMailRead, MdPhoneInTalk, FiLogIn, FiLogOut, FaFacebookF, FaYoutube, FaLinkedinIn, AiOutlineGooglePlus, FaRegUserCircle } from 'react-icons/all';
 import useAuth from '../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 
@@ -46,7 +46,7 @@ const Header = () => {
                             user.email && <div className="flex flex-col items-center">
                                 <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
                                 <span className="font-semibold text-xs">{user.displayName}</span>
-                                </div> 
+                            </div>
 
                         }
 
@@ -55,14 +55,14 @@ const Header = () => {
             </section>
             <hr className=" w-4/5 mx-auto" />
             <section className="bottom-header flex justify-evenly items-center mb-4">
-                <div className=" w-5/12 flex justify-between items-center ">
+                <div className=" w-6/12 flex justify-between items-center ">
                     <Navbar collapseOnSelect expand="lg">
                         <Container>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="" >
                                     <NavLink to="/home" className="font-semibold uppercase mr-6 no-underline group text-black  ">Home</NavLink>
-                                    <NavLink to="/about" className="font-semibold uppercase mx-6 no-underline text-black">About</NavLink>
+                                    <NavLink to="/about" className="font-semibold uppercase mx-6 no-underline text-black">About us</NavLink>
                                     <NavLink to="/services" className="font-semibold uppercase mx-6 no-underline text-black">Services</NavLink>
                                     <NavLink to="/appointment" className="font-semibold uppercase mx-6 no-underline text-black">Appointment</NavLink>
                                     <NavLink to="/doctors" className="font-semibold uppercase mx-6 no-underline text-black">Our Doctor</NavLink>
@@ -71,11 +71,16 @@ const Header = () => {
                         </Container>
                     </Navbar>
                 </div>
-                <div className="flex ">
+                <div className="flex items-center ">
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-3 cursor-pointer"><FaFacebookF className="text-sm text-white " /></span>
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-3 cursor-pointer"><FaYoutube className="text-sm text-white " /></span>
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-3 cursor-pointer"><FaLinkedinIn className="text-sm text-white " /></span>
-                    <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-10 cursor-pointer"><AiOutlineGooglePlus className="text-sm text-white " /></span>
+                    <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-10 cursor-pointer"><AiOutlineGooglePlus className="text-sm text-white " /></span>                    
+                    <OverlayTrigger overlay={<Tooltip id="tooltip-disabled" >Register</Tooltip>}>
+                        <span className="d-inline-block">
+                        <NavLink to="/register" className=" text-2xl text-black"><FaRegUserCircle /></NavLink>
+                        </span>
+                    </OverlayTrigger>
 
                 </div>
             </section>

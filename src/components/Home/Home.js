@@ -2,8 +2,9 @@ import React from 'react';
 import './Home.css'
 import Banner from './Banner/Banner';
 import Info from './Info/Info';
-import Services from '../Services/Services';
 import ServicesInHome from './ServicesInHome/ServicesInHome';
+import DoctorInHome from './DoctorInHome/DoctorInHome'
+
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner/>
             <Info/>
             <ServicesInHome/>
+            <DoctorInHome/>
         </div>
     );
 };

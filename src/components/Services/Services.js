@@ -13,9 +13,9 @@ const Services = () => {
     return (
         <CommonPage title={'Services'}>
             <div className="bg-gray-50 ">
-                <div className="flex flex-col justify-center items-center pt-40 pb-5">
-                    <h5 className="text-green-400">Medical Services</h5>
-                    <h2 className="font-semibold">Our Healthcare Service</h2>
+                <div className="flex flex-col justify-center items-center pt-32 pb-5">
+                    <p className="text-green-400 text-xl font-medium">Medical Services</p>
+                    <p className="font-semibold text-4xl">Our Healthcare Service</p>
                     <p className="w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
                 </div>
                 <div className="grid grid-cols-3 px-40 gap-y-10 ">

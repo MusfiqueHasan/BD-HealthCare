@@ -24,6 +24,7 @@ function App() {
             <Route path="/single-service/:id"><SingleService /></Route>
             <Route path="/appointment"><Home /></Route>
             <Route path="/doctors"><Doctors /></Route>
+            {/* <Route path="/doctors"><Doctors /></Route> */}
             <Route path="/login"><Login /></Route>
             <Route path="*"><Error /></Route>
           </Switch>
