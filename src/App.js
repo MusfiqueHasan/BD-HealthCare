@@ -8,6 +8,7 @@ import Services from "./components/Services/Services";
 import SingleService from "./components/Services/SingleService";
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
+import Doctors from "./components/Doctors/Doctors";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <PrivateRoute path="/services"><Services /></PrivateRoute>
             <Route path="/single-service/:id"><SingleService /></Route>
             <Route path="/appointment"><Home /></Route>
-            <Route path="/doctors"><Home /></Route>
+            <Route path="/doctors"><Doctors /></Route>
             <Route path="/login"><Login /></Route>
             <Route path="*"><Error /></Route>
           </Switch>

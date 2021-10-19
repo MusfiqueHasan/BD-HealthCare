@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import CommonPage from '../CommonPage/CommonPage';
-// import useServices from '../../hooks/useServices';
 
 const SingleService = () => {
     const { id } = useParams();
@@ -10,15 +9,14 @@ const SingleService = () => {
         fetch('/services.json')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setDetails(data)
             })
     }, [])
     console.log(details)
 
     const SingleService = details.filter(service => service.id == id);
-    console.log(SingleService)
-    // const { img, title } = singleService;
+    // console.log(SingleService)
     return (
         <CommonPage title={'Service Details'} prevTitle={'Services'}>
             <div>

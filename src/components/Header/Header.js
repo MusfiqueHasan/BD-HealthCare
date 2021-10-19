@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../../images/b.png'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { GoMailRead, MdPhoneInTalk, FiLogIn, FiLogOut, FaFacebookF, FaYoutube, FaLinkedinIn, AiOutlineGooglePlus } from 'react-icons/all';
 import useAuth from '../../hooks/useAuth';
@@ -7,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const { user, logOut } = useAuth()
+    console.log(user)
     return (
         <>
             <section className="top-header flex justify-evenly items-center my-3">
@@ -30,7 +30,7 @@ const Header = () => {
                     </div>
                     <div className="login-logout flex items-center">
                         {user.email ? <div >
-                            <button onClick={logOut} className="flex items-center no-underline text-white font-semibold mr-3 bg-blue-900 px-3 py-2 rounded-full">
+                            <button onClick={logOut} className="flex items-center no-underline text-white font-semibold mr-4 bg-blue-900 px-3 py-2 rounded-full">
                                 <FiLogOut className="mr-1" />
                                 <span className="text-xs">Logout</span>
                             </button>
@@ -42,8 +42,14 @@ const Header = () => {
                                 </NavLink>
 
                             </div>}
-                              { user.email &&  <img src={user.photoURL} alt="" className="rounded-full w-14 h-14"  />}
-                        
+                        {
+                            user.email && <div className="flex flex-col items-center">
+                                <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
+                                <span className="font-semibold text-xs">{user.displayName}</span>
+                                </div> 
+
+                        }
+
                     </div>
                 </div>
             </section>

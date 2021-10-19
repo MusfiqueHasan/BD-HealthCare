@@ -9,10 +9,10 @@ const CommonPage = (props) => {
                     <h1 className="text-white ">{props.title}</h1>
                     <div className="flex justify-evenly items-center">
                         <NavLink to="/home" className=" text-white"><i className="fas fa-home"></i></NavLink>
-                        <i class="fas fa-chevron-right text-green-400"></i>
+                        <i className="fas fa-chevron-right text-green-400"></i>
                         {
                             props.prevTitle && (<div><span className="text-white">{props.prevTitle} </span>
-                             <i class="fas fa-chevron-right text-green-400"></i></div>)
+                             <i className="fas fa-chevron-right text-green-400"></i></div>)
                         }
                         <span className="text-white">{props.title}</span>
                     </div>

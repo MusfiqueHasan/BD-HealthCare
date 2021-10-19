@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
-    const { signInUsingGoogle,user } = useAuth();
+    const { signInUsingGoogle, user, setIsLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/'
@@ -13,7 +13,7 @@ const Login = () => {
         signInUsingGoogle()
             .then(result => {
                 history.push(redirect_uri)
-            })
+            }).finally(() => setIsLoading(false))
     }
     return (
         <div>

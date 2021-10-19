@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 const AllServices = (props) => {
     const { id,img, title, description } = props.service;
     return (
-        <div className="flex justify-center ">
+        <div className=" hvr-shrink flex justify-center ">
             <Card style={{ width: '370px', height: '500px' }} className="shadow-md">
                 <div className="h-3/6">
                     <img src={img} alt="" className="h-full w-full" />

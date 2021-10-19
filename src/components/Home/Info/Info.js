@@ -2,7 +2,7 @@ import React from 'react';
 
 const Info = () => {
     return (
-        <div className=" flex justify-center mt-20 h-screen ">
+        <div className=" flex justify-center mt-20 bg-gray-50 ">
 
             <div className=" w-3/12 h-80 p-14 shadow-xl">
                 <i className="fas fa-user-md text-5xl text-green-400 mb-2"></i>

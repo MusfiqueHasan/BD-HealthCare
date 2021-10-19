@@ -1,18 +1,17 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import useServices from '../../hooks/useServices';
-import CommonPage from '../CommonPage/CommonPage';
-import AllServices from './AllServices';
-import './Service.css'
-const Services = () => {    
+import useServices from '../../../hooks/useServices';
+import AllServices from '../../Services/AllServices';
+
+const ServicesInHome = () => {
     const history = useHistory()
     const [services] = useServices()
     const handleServiceDetails = (id) => {
             history.push(`/single-service/${id}`)
     }
     return (
-        <CommonPage title={'Services'}>
-            <div className="bg-gray-50 ">
+        <div>
+             <div className="bg-gray-50 ">
                 <div className="flex flex-col justify-center items-center pt-40 pb-5">
                     <h5 className="text-green-400">Medical Services</h5>
                     <h2 className="font-semibold">Our Healthcare Service</h2>
@@ -29,8 +28,8 @@ const Services = () => {
                     }
                 </div>
             </div>
-        </CommonPage>
+        </div>
     );
 };
 
-export default Services;
+export default ServicesInHome;
