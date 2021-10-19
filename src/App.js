@@ -11,6 +11,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import Doctors from "./components/Doctors/Doctors";
 import Footer from "./components/Footer/Footer";
 import './App.css'
+import Appointment from "./components/Appointment/Appointment";
 function App() {
   return (
     <div className="App">
@@ -23,8 +24,8 @@ function App() {
             <Route path="/about"><About /></Route>
             <PrivateRoute path="/services"><Services /></PrivateRoute>
             <Route path="/single-service/:id"><SingleService /></Route>
-            <Route path="/appointment"><Home /></Route>
-            <Route path="/doctors"><Doctors /></Route>
+            <PrivateRoute path="/appointment"><Appointment /></PrivateRoute>
+            <PrivateRoute path="/doctors"><Doctors /></PrivateRoute>
             <Route path="/login"><Login /></Route>
             <Route path="*"><Error /></Route>
           </Switch>

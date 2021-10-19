@@ -54,7 +54,7 @@ const Header = () => {
                 </div>
             </section>
             <hr className=" w-4/5 mx-auto" />
-            <section className="bottom-header flex justify-evenly items-center pb-4">
+            <section className="bottom-header flex justify-evenly items-center py-4">
                 <div className=" w-6/12 flex justify-between items-center ">
                     <Navbar collapseOnSelect expand="lg">
                         <Container>
@@ -64,8 +64,8 @@ const Header = () => {
                                     <NavLink to="/home" className="font-semibold uppercase mr-6 no-underline group text-black  ">Home</NavLink>
                                     <NavLink to="/about" className="font-semibold uppercase mx-6 no-underline text-black">About us</NavLink>
                                     <NavLink to="/services" className="font-semibold uppercase mx-6 no-underline text-black">Services</NavLink>
-                                    <NavLink to="/appointment" className="font-semibold uppercase mx-6 no-underline text-black">Appointment</NavLink>
                                     <NavLink to="/doctors" className="font-semibold uppercase mx-6 no-underline text-black">Our Doctor</NavLink>
+                                    <NavLink to="/appointment" className="font-semibold uppercase mx-6 no-underline text-black">Appointment</NavLink>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
