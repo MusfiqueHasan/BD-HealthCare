@@ -31,8 +31,8 @@ const SingleService = () => {
                         <img src={SingleService[0]?.img} alt="" className="w-96 h-96" />
                     </div>
                     <div className=" flex flex-col items-start">
-                        <p className=" bg-green-300 rounded-full px-3 py-2 text-white font-semibold "><span>{id}</span></p>
-                        <h1 className=" font-extrabold">{SingleService[0]?.title}</h1>
+                        <p className=" bg-green-300 rounded-full px-3 py-2 text-white font-semibold mb-3"><span>{id}</span></p>
+                        <p className=" font-extrabold text-5xl mb-3">{SingleService[0]?.title}</p>
                         <p className=" text-justify">{SingleService[0]?.description}</p>
                         <NavLink to="/services" className=" no-underline bg-green-300 text-white uppercase font-bold  rounded-full px-4 py-2 mt-5">See all services</NavLink>
                     </div>

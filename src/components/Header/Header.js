@@ -8,7 +8,7 @@ const Header = () => {
     const { user, logOut } = useAuth()
     console.log(user)
     return (
-        <>
+        <div className="shadow-xl ">
             <section className="top-header flex justify-evenly items-center my-3">
                 <div>
                     <NavLink to="/home" className=" text-2xl font-bold no-underline text-black" >BD-HealthCare</NavLink>
@@ -54,7 +54,7 @@ const Header = () => {
                 </div>
             </section>
             <hr className=" w-4/5 mx-auto" />
-            <section className="bottom-header flex justify-evenly items-center mb-4">
+            <section className="bottom-header flex justify-evenly items-center pb-4">
                 <div className=" w-6/12 flex justify-between items-center ">
                     <Navbar collapseOnSelect expand="lg">
                         <Container>
@@ -84,7 +84,7 @@ const Header = () => {
 
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 

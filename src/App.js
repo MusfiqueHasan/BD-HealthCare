@@ -9,10 +9,11 @@ import SingleService from "./components/Services/SingleService";
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import Doctors from "./components/Doctors/Doctors";
-
+import Footer from "./components/Footer/Footer";
+import './App.css'
 function App() {
   return (
-    <>
+    <div className="App">
       <AuthProvider>
         <Router>
           <Header />
@@ -24,14 +25,13 @@ function App() {
             <Route path="/single-service/:id"><SingleService /></Route>
             <Route path="/appointment"><Home /></Route>
             <Route path="/doctors"><Doctors /></Route>
-            {/* <Route path="/doctors"><Doctors /></Route> */}
             <Route path="/login"><Login /></Route>
             <Route path="*"><Error /></Route>
           </Switch>
+          <Footer />
         </Router>
-
       </AuthProvider>
-    </>
+    </div>
   );
 }
 

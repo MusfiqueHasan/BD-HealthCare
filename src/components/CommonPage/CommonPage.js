@@ -6,7 +6,7 @@ const CommonPage = (props) => {
         <div>
             <div className="common-banner flex justify-center items-center">
                 <div>
-                    <h1 className="text-white ">{props.title}</h1>
+                    <p className="text-white text-4xl font-semibold">{props.title}</p>
                     <div className="flex justify-evenly items-center">
                         <NavLink to="/home" className=" text-white"><i className="fas fa-home"></i></NavLink>
                         <i className="fas fa-chevron-right text-green-400"></i>
