@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
@@ -10,8 +11,9 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const { register, formState: { errors } } = useForm();
 
-    const { user, handleGoogleLogin, createNewAccount, setUser, error, setError, setUserName, setUserDisplayName } = useAuth();
+    const { user, signInUsingGoogle, setIsLoading, createNewAccount, setUser, error, setError, setUserName, setUserDisplayName } = useAuth();
     const handleNameField = event => {
+        console.log(event.target.value)
         setName(event.target.value);
     }
     const handleEmailField = event => {
@@ -32,12 +34,23 @@ const Register = () => {
                 const user = result.user;
                 setUserName(name);
                 setUserDisplayName(name);
+                console.log(name)
                 setError('');
                 setUser(user);
             })
             .catch(error => {
                 setError(error.message);
             })
+    }
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/'
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri)
+                setUser(result.user);
+            }).finally(() => setIsLoading(false))
     }
     return (
         <div>
@@ -48,13 +61,13 @@ const Register = () => {
             </section>
             <form className="my-8 md:mx-72 flex flex-col justify-center items-center" onSubmit={handleRegistration}>
                 <input
-
+                    type="text"
                     onBlur={handleNameField}
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2"
                     placeholder="name"
                     id="inputName"
                     defaultValue={user.displayName}
-                    {...register("name")}
+                // {...register("name")}
                 />
 
                 <input
@@ -64,14 +77,14 @@ const Register = () => {
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2"
                     placeholder="email"
                     defaultValue={user.email}
-                    // {...register("email", { required: true })}
+                // {...register("email", { required: true })}
                 />
 
                 <input
                     onBlur={handlePasswordField}
-                    type="password"                    
+                    type="password"
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5 rounded-full border-2"
-                    placeholder="password" 
+                    placeholder="password"
                 />
                 <p className='text-danger'>{error}</p>
 

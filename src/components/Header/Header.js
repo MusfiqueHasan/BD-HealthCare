@@ -5,8 +5,9 @@ import useAuth from '../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-    const { user, logOut } = useAuth()
+    const { user, logOut,userDisplayName } = useAuth()
     console.log(user)
+    console.log(userDisplayName)
     return (
         <div className="shadow-xl ">
             <section className=" flex md:justify-evenly md:items-center md:flex-row flex-col my-3">
@@ -45,9 +46,16 @@ const Header = () => {
 
                             </div>}
                         {
-                            user.email && <div className="flex flex-col items-center">
+                            user.email && user.displayName && <div className="flex flex-col items-center">
                                 <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
                                 <span className="font-semibold text-xs">{user.displayName}</span>
+                            </div>
+
+                        }
+                        {
+                            user.email && userDisplayName && <div className="flex flex-col items-center">
+                                <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
+                                <span className="font-semibold text-xs">{userDisplayName}</span>
                             </div>
 
                         }

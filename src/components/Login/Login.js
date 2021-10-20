@@ -8,6 +8,7 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { formState: { errors } } = useForm();
     const { signInUsingGoogle, user, setIsLoading, processLogin, setUser, error, setError } = useAuth();
     const handleEmailField = event => {
         setEmail(event.target.value);
@@ -23,12 +24,6 @@ const Login = () => {
         }
         processLogin(email, password);
     }
-
-
-
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    // const onSubmit = data => console.log(data);
-    
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/'
@@ -54,7 +49,7 @@ const Login = () => {
                     className="py-2 px-3 mt-1 md:w-2/5 w-10/12 rounded-full border-2"
                     placeholder="email"
                     defaultValue={user.email}
-                    //
+                    
                 />
                 <input
                     onBlur={handlePasswordField}
@@ -64,8 +59,6 @@ const Login = () => {
                     
                 />
                 <p className=" text-red-600">{error}</p>
-
-
                 <p className="mt-2">If you have not any account? <Link to="/register">Register</Link> </p>
                 <button
                     className="py-2 px-10 mt-3 bg-green-400 text-white font-semibold rounded-full"

@@ -53,6 +53,7 @@ const useFirebase = () => {
             
     }
     const setUserName = (name) => {
+        console.log(name)
         updateProfile(auth.currentUser, { displayName: name })
             .then(() => {
                 // Profile updated!
