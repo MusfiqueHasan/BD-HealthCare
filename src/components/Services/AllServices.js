@@ -6,7 +6,7 @@ const AllServices = (props) => {
     const { id,img, title, description } = props.service;
     return (
         <div className=" hvr-shrink flex justify-center ">
-            <Card style={{ width: '370px', height: '500px' }} className="shadow-md">
+            <Card style={{ height: '500px' }} className="shadow-md md:w-96 w-80">
                 <div className="h-3/6">
                     <img src={img} alt="" className="h-full w-full" />
                 </div>

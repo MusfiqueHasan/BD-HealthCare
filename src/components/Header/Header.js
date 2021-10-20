@@ -32,13 +32,13 @@ const Header = () => {
                     </div>
                     <div className="flex items-center justify-center mt-0 sm:mt-5 ">
                         {user.email ? <div >
-                            <button onClick={logOut} className="flex items-center no-underline text-white font-semibold mr-4 bg-blue-900 px-3 py-2 rounded-full">
+                            <button onClick={logOut} className="flex items-center no-underline text-white font-semibold mr-4 bg-blue-900 px-3 py-2 rounded-lg">
                                 <FiLogOut className="mr-1" />
                                 <span className="text-xs">Logout</span>
                             </button>
                         </div> :
                             <div className="flex items-center">
-                                <NavLink to="/login" className="flex items-center no-underline text-white font-semibold mr-3 bg-blue-900  px-3 py-2 rounded-full">
+                                <NavLink to="/login" className="flex items-center no-underline text-white font-semibold mr-3 bg-blue-900  px-3 py-2 rounded-lg">
                                     <FiLogIn className="mr-1" />
                                     <span className="text-xs">Login</span>
                                 </NavLink>

@@ -18,7 +18,7 @@ const Services = () => {
                     <p className="md:font-semibold font-bold md:text-4xl text-xl">Our Healthcare Service</p>
                     <p className="md:w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
                 </div>
-                <div className="grid md:grid-cols-3 md:px-40 gap-y-10 ">
+                <div className="grid md:grid-cols-3 md:px-40 px-6 gap-y-10 ">
 
                     {
                         services.map(service => <AllServices
