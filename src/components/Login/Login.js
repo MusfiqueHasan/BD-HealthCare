@@ -10,6 +10,10 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const { formState: { errors } } = useForm();
     const { signInUsingGoogle, user, setIsLoading, processLogin, setUser, error, setError } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/'
+    
     const handleEmailField = event => {
         setEmail(event.target.value);
     }
@@ -22,11 +26,12 @@ const Login = () => {
             setError('type a 6 char long password');
             return;
         }
+        if (user.email) {
+            history.push(redirect_uri)
+        }
         processLogin(email, password);
     }
-    const location = useLocation();
-    const history = useHistory();
-    const redirect_uri = location.state?.from || '/'
+    
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then(result => {

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Container, Nav, Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { GoMailRead, MdPhoneInTalk, FiLogIn, FiLogOut, FaFacebookF, FaYoutube, FaLinkedinIn, AiOutlineGooglePlus, FaRegUserCircle } from 'react-icons/all';
+import { GoMailRead, MdPhoneInTalk, FiLogIn, FiLogOut, FaFacebookF, FaYoutube,FaUserCircle, FaLinkedinIn, AiOutlineGooglePlus, FaRegUser } from 'react-icons/all';
 import useAuth from '../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-    const { user, logOut,userDisplayName } = useAuth()
-    console.log(user)
+    const { user, logOut, userDisplayName } = useAuth()
+    console.log(user.displayName)
     console.log(userDisplayName)
+    console.log(user)
+
     return (
         <div className="shadow-xl ">
             <section className=" flex md:justify-evenly md:items-center md:flex-row flex-col my-3">
@@ -46,19 +48,16 @@ const Header = () => {
 
                             </div>}
                         {
-                            user.email && user.displayName && <div className="flex flex-col items-center">
-                                <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
+                            user.displayName && <div className="flex flex-col items-center">
+                                {user.photoURL ?
+                                    <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
+                                    : <FaUserCircle className="rounded-full w-14 h-14"/>
+                                }
                                 <span className="font-semibold text-xs">{user.displayName}</span>
                             </div>
 
                         }
-                        {
-                            user.email && userDisplayName && <div className="flex flex-col items-center">
-                                <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
-                                <span className="font-semibold text-xs">{userDisplayName}</span>
-                            </div>
 
-                        }
 
                     </div>
                 </div>
@@ -88,7 +87,7 @@ const Header = () => {
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-10 cursor-pointer"><AiOutlineGooglePlus className="text-sm text-white " /></span>
                     <OverlayTrigger overlay={<Tooltip id="tooltip-disabled" >Register</Tooltip>}>
                         <span className="d-inline-block">
-                            <NavLink to="/register" className=" text-2xl text-black"><FaRegUserCircle /></NavLink>
+                            <NavLink to="/register" className=" text-2xl text-black"><FaRegUser /></NavLink>
                         </span>
                     </OverlayTrigger>
 

@@ -12,6 +12,9 @@ const Register = () => {
     const { register, formState: { errors } } = useForm();
 
     const { user, signInUsingGoogle, setIsLoading, createNewAccount, setUser, error, setError, setUserName, setUserDisplayName } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/'
     const handleNameField = event => {
         console.log(event.target.value)
         setName(event.target.value);
@@ -30,6 +33,7 @@ const Register = () => {
             return;
         }
         createNewAccount(email, password)
+
             .then(result => {
                 const user = result.user;
                 setUserName(name);
@@ -37,14 +41,15 @@ const Register = () => {
                 console.log(name)
                 setError('');
                 setUser(user);
+                if (user.email) {
+                    history.push(redirect_uri)
+                }
             })
             .catch(error => {
                 setError(error.message);
             })
     }
-    const location = useLocation();
-    const history = useHistory();
-    const redirect_uri = location.state?.from || '/'
+
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then(result => {
@@ -66,8 +71,7 @@ const Register = () => {
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2"
                     placeholder="name"
                     id="inputName"
-                    defaultValue={user.displayName}
-                // {...register("name")}
+                    
                 />
 
                 <input
@@ -76,8 +80,7 @@ const Register = () => {
                     id="inputEmail3"
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2"
                     placeholder="email"
-                    defaultValue={user.email}
-                // {...register("email", { required: true })}
+                    
                 />
 
                 <input
