@@ -23,10 +23,10 @@ const Profile = () => {
                         }
                     </div>
                     <div className=" flex flex-col items-start pt-5 ">
-                        <p ><span className="font-bold ">Userid: </span><span> {user.uid}</span></p>
-                        <p ><span className="font-bold ">Username: </span><span> {user.displayName}</span></p>
-                        <p ><span className="font-bold ">Email: </span><span> {user.email}</span></p>
-                        <p ><span className="font-bold ">Email Verification: </span>
+                        <p className=" mb-3" ><span className="font-bold ">Userid: </span><span> {user.uid}</span></p>
+                        <p className=" mb-3" ><span className="font-bold ">Username: </span><span> {user.displayName}</span></p>
+                        <p className=" mb-3" ><span className="font-bold ">Email: </span><span> {user.email}</span></p>
+                        <p className=" mb-3" ><span className="font-bold ">Email Verification: </span>
                             {
                                 user.emailVerified ?
                                     <span className="text-green-600 font-extrabold"> verified</span> :
