@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import useServices from '../../../hooks/useServices';
 import AllServices from '../../Services/AllServices';
 
@@ -18,7 +19,7 @@ const ServicesInHome = () => {
                     <p className="md:font-semibold font-bold text-xl md:text-4xl">Our Healthcare Service</p>
                     <p className="md:w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
                 </div>
-                <div className="grid md:grid-cols-3 md:px-40 gap-y-10 ">
+                <div className="grid md:grid-cols-3 md:px-40 px-6 gap-y-10 ">
 
                     {
                         services.map(service => <AllServices
@@ -28,6 +29,9 @@ const ServicesInHome = () => {
                         />)
                     }
                 </div>
+                <div className=" flex justify-center">
+                <NavLink to="/services" className=" no-underline mt-12 bg-blue-900 text-white font-semibold py-3 px-5 rounded-lg ">See all Services </NavLink>
+            </div>
             </div>
         </div>
     );

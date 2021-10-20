@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import useDoctors from '../../../hooks/useDoctors';
 import DoctorsDetails from '../../Doctors/DoctorsDetails';
 
@@ -17,6 +18,9 @@ const DoctorInHome = () => {
                 {
                     doctors.map(doctor => <DoctorsDetails key={doctor.id} doctor={doctor} />)
                 }
+            </div>
+            <div className=" flex justify-center">
+                <NavLink to="/doctors" className=" no-underline bg-green-400 text-white font-semibold py-3 px-5 rounded-lg ">See all doctors </NavLink>
             </div>
         </div>
     );
