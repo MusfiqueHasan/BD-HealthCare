@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Nav, Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { GoMailRead, MdPhoneInTalk, FiLogIn, FiLogOut, FaFacebookF, FaYoutube,FaUserCircle, FaLinkedinIn, AiOutlineGooglePlus, FaRegUser } from 'react-icons/all';
+import { GoMailRead, MdPhoneInTalk, FiLogIn, FiLogOut, FaFacebookF, FaYoutube, FaUserCircle, FaLinkedinIn, AiOutlineGooglePlus, FaRegUser } from 'react-icons/all';
 import useAuth from '../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
+
 
 const Header = () => {
     const { user, logOut, userDisplayName } = useAuth()
@@ -47,13 +48,30 @@ const Header = () => {
                                 </NavLink>
 
                             </div>}
+
                         {
-                            user.displayName && <div className="flex flex-col items-center">
-                                {user.photoURL ?
-                                    <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
-                                    : <FaUserCircle className="rounded-full w-14 h-14"/>
-                                }
-                                <span className="font-semibold text-xs">{user.displayName}</span>
+                            user.displayName && <div>
+                                {['right'].map((placement) => (
+                                    <OverlayTrigger
+                                        key={placement}
+                                        placement={placement}
+                                        overlay={
+                                            <Tooltip id={`tooltip-${placement}`}>
+                                                profile
+                                            </Tooltip>
+                                        }
+                                    >
+                                        <NavLink to="/profile" className=" text-2xl text-black">
+                                            <div className="flex flex-col items-center">
+                                                {user.photoURL ?
+                                                    <img src={user.photoURL} alt="" className="rounded-full w-14 h-14" />
+                                                    : <FaUserCircle className="rounded-full w-14 h-14" />
+                                                }
+                                                <span className="font-semibold text-xs">{user.displayName}</span>
+                                            </div>
+                                        </NavLink>
+                                    </OverlayTrigger>
+                                ))}
                             </div>
 
                         }
@@ -90,6 +108,7 @@ const Header = () => {
                             <NavLink to="/register" className=" text-2xl text-black"><FaRegUser /></NavLink>
                         </span>
                     </OverlayTrigger>
+
 
                 </div>
             </section>

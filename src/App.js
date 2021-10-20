@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 import './App.css'
 import Appointment from "./components/Appointment/Appointment";
 import Register from "./components/Register/Register";
+import Profile from "./components/Profile/Profile";
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
             <PrivateRoute path="/single-service/:id"><SingleService /></PrivateRoute>
             <PrivateRoute path="/appointment"><Appointment /></PrivateRoute>
             <PrivateRoute path="/doctors"><Doctors /></PrivateRoute>
+            <PrivateRoute path="/profile"><Profile /></PrivateRoute>
             <Route path="/login"><Login /></Route>
             <Route path="/register"><Register /></Route>
             <Route path="*"><Error /></Route>
