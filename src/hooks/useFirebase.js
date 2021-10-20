@@ -36,16 +36,8 @@ const useFirebase = () => {
     }, [auth])
 
     const processLogin = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                setError('');
-                setUser(user);
-            })
-            .catch(error => {
-                setError(error.message);
-            })
+       return signInWithEmailAndPassword(auth, email, password)
+        
     }
 
     const createNewAccount = (email, password) => {

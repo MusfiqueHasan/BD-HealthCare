@@ -11,13 +11,15 @@ const Appointment = () => {
         setDate(date)
     }
     return (
-        <>
+        <div>
+            {/* appointment header */}
             <section className="flex flex-col justify-center items-center pt-24 ">
                 <p className="text-green-400 text-2xl font-bold uppercase">Appointment</p>
                 <p className="md:font-semibold font-bold text-xl md:text-4xl">To get an Appointment </p>
                 <p className="md:w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
             </section>
             <section className=" grid md:grid-cols-2 md:px-32">
+                {/* calender */}
                 <div className=" md:px-16 py-10 border-2 md:m-14 m-6 shadow-xl">
                     <p className=" text-center font-bold text-3xl mb-4 ">Calender</p>
                     <Calendar
@@ -25,6 +27,7 @@ const Appointment = () => {
                         value={date}
                     />
                 </div>
+                {/* appointment form */}
                 <form className="my-8 flex flex-col md:items-stretch items-center " onSubmit={handleSubmit(onSubmit)}>
                     <input className="py-3 px-4 mt-1 w-5/6  border-2" placeholder="name" defaultValue={user.displayName} {...register("name")} />
                     <input className="py-3 px-4 mt-3 w-5/6  border-2" placeholder="email" defaultValue={user.email} {...register("email", { required: true })} />
@@ -59,7 +62,7 @@ const Appointment = () => {
 
                 </form>
             </section>
-        </>
+        </div>
     );
 };
 

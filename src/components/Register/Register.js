@@ -9,23 +9,27 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { register, formState: { errors } } = useForm();
+    const { formState: { errors } } = useForm();
 
-    const { user, signInUsingGoogle, setIsLoading, createNewAccount, setUser, error, setError, setUserName, setUserDisplayName } = useAuth();
+    const { signInUsingGoogle, setIsLoading, createNewAccount, setUser, error, setError, setUserName, setUserDisplayName } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/'
+
+    // get name
     const handleNameField = event => {
         console.log(event.target.value)
         setName(event.target.value);
     }
+    // get email
     const handleEmailField = event => {
         setEmail(event.target.value);
     }
+    // get password
     const handlePasswordField = event => {
         setPassword(event.target.value);
     }
-
+    // submit registration form
     const handleRegistration = (event) => {
         event.preventDefault();
         if (password.length < 6) {
@@ -33,7 +37,6 @@ const Register = () => {
             return;
         }
         createNewAccount(email, password)
-
             .then(result => {
                 const user = result.user;
                 setUserName(name);
@@ -49,7 +52,7 @@ const Register = () => {
                 setError(error.message);
             })
     }
-
+    // handling google sign in authentication
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then(result => {
@@ -59,11 +62,14 @@ const Register = () => {
     }
     return (
         <div>
+            {/* registration header */}
             <section className="flex flex-col justify-center items-center pt-24 md:mx-0 mx-4 ">
                 <p className="text-green-400 text-2xl font-bold uppercase">Register</p>
                 <p className="font-bold text-xl md:text-4xl">Join us to get all Access</p>
                 <p className="md:w-2/5 md:text-center text-justify text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
             </section>
+
+            {/* registration form */}
             <form className="my-8 md:mx-72 flex flex-col justify-center items-center" onSubmit={handleRegistration}>
                 <input
                     type="text"
@@ -71,7 +77,7 @@ const Register = () => {
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2"
                     placeholder="name"
                     id="inputName"
-                    
+
                 />
 
                 <input
@@ -80,7 +86,7 @@ const Register = () => {
                     id="inputEmail3"
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2"
                     placeholder="email"
-                    
+                    required
                 />
 
                 <input
@@ -88,6 +94,7 @@ const Register = () => {
                     type="password"
                     className="py-2 px-3 mt-1 w-10/12 md:w-2/5 rounded-full border-2"
                     placeholder="password"
+                    required
                 />
                 <p className='text-danger'>{error}</p>
 
@@ -97,7 +104,7 @@ const Register = () => {
                 <p className="mt-2">Already have an account? <Link to="/login">Login</Link> </p>
                 <button
                     className="py-2 px-10 mt-3 bg-green-400 text-white font-semibold rounded-full"
-                    type="submit" ></button>
+                    type="submit" >Register</button>
                 <button
                     className="py-2 px-10 mt-3 bg-green-400 text-white font-semibold rounded-full"
                     onClick={handleGoogleLogin}

@@ -7,6 +7,7 @@ const About = () => {
 
     return (
         <CommonPage title={'About'}>
+            {/* top section of about */}
             <section className="about-bottom grid md:grid-cols-2 grid-cols-1  md:mx-44 md:my-20 my-10">
                 <div className=" mx-10 ">
                     <img width="440" src={aboutImg} alt="" />
@@ -31,6 +32,7 @@ const About = () => {
                 </div>
 
             </section>
+            {/* help and faq section */}
             <section className="md:px-0 px-10">
                 <div className="flex flex-col justify-center items-center pt-24 ">
                     <p className="text-green-400 text-2xl font-bold uppercase">Help & FAQ</p>

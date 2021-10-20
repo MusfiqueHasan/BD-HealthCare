@@ -5,6 +5,7 @@ import CommonPage from '../CommonPage/CommonPage';
 
 const SingleService = () => {
     const { id } = useParams();
+    // fetching data
     const [details, setDetails] = useState([]);
     useEffect(() => {
         fetch('/services.json')
@@ -15,10 +16,12 @@ const SingleService = () => {
             })
     }, [])
     console.log(details)
-
+    //  filtering data from local json data
     const SingleService = details.filter(service => service.id == id);
-    // console.log(SingleService)
+
     return (
+
+        // Single service details
         <CommonPage title={'Single Service'} prevTitle={'Services'}>
             <div className="flex flex-col justify-center items-center pt-32 mb-5">
                 <p className="text-green-400 text-xl font-medium">Single Services</p>

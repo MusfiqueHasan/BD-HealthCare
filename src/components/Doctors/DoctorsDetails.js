@@ -5,7 +5,8 @@ import { FaFacebookF, FaYoutube, FaLinkedinIn, FaInstagram } from 'react-icons/a
 const DoctorsDetails = ({ doctor }) => {
     const { name, designation, img } = doctor
     return (
-        <>
+        <div>
+            {/* single doctor details card */}
             <Card className=" text-white mb-40">
                 <Card.Img src={img} alt="Card image" />
                 <Card.ImgOverlay className=" bg-blue-900 md:w-80 w-64 h-2/5 md:mt-96 mt-72 mx-auto flex flex-col justify-center items-center ">
@@ -21,7 +22,7 @@ const DoctorsDetails = ({ doctor }) => {
                 </Card.ImgOverlay>
             </Card>
 
-        </>
+        </div>
     );
 };
 

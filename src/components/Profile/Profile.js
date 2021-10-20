@@ -7,10 +7,9 @@ const Profile = () => {
 
     return (
         <div>
+            {/* My profile section */}
             <div className="flex flex-col justify-center items-center pt-32 mb-5">
-                <p className="text-green-400 text-xl font-medium">Single Services</p>
-                <p className="md:font-semibold font-bold md:text-4xl text-xl">Our Healthcare Service Details</p>
-                <p className="md:w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
+                <p className="text-green-400 md:text-5xl text-3xl font-extrabold uppercase border-b-4">My Profile</p>
             </div>
             <div className=" md:px-40">
                 <div className=" border-2  grid md:grid-cols-2 shadow-xl md:p-20 p-10 ">
@@ -38,9 +37,9 @@ const Profile = () => {
 
                             {
                                 user.reloadUserInfo.passwordHash ?
-                                <span> {user.reloadUserInfo.passwordHash}</span>
-                                :
-                                <span className=" text-gray-400"> you entered using firebase</span>
+                                    <span> {user.reloadUserInfo.passwordHash}</span>
+                                    :
+                                    <span className=" text-gray-400"> you entered using firebase</span>
                             }
 
                         </p>

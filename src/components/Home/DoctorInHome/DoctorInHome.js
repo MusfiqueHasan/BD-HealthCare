@@ -5,6 +5,7 @@ import DoctorsDetails from '../../Doctors/DoctorsDetails';
 const DoctorInHome = () => {
     const [doctors] = useDoctors(true)
     return (
+        // doctor section in home
         <div className="bg-gray-50">
             <div className="flex flex-col justify-center items-center pt-32 pb-5">
                 <p className="text-green-400 text-xl font-medium">Our Doctors</p>

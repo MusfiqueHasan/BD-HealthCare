@@ -11,6 +11,7 @@ const ServicesInHome = () => {
     }
     return (
         <div>
+            {/* service section in home */}
              <div className="bg-gray-50 ">
                 <div className="flex flex-col justify-center items-center pt-40 pb-5">
                     <p className="text-green-400 text-xl font-medium">Medical Services</p>

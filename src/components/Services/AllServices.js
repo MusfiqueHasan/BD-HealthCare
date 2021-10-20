@@ -1,10 +1,11 @@
-
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
 const AllServices = (props) => {
     const { id,img, title, description } = props.service;
     return (
+
+        // Services card 
         <div className=" hvr-shrink flex justify-center ">
             <Card style={{ height: '500px' }} className="shadow-md md:w-96 w-80">
                 <div className="h-3/6">

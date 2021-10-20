@@ -7,6 +7,7 @@ const Doctors = () => {
     const [doctors] = useDoctors(false)
     return (
         <CommonPage title={'Our Doctors'}>
+            {/* mapping all doctor info */}
             <div className="bg-gray-50">
                 <div className="flex flex-col justify-center items-center pt-32 pb-5">
                     <p className="text-green-400 text-xl font-medium">Our Doctors</p>

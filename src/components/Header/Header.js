@@ -13,10 +13,14 @@ const Header = () => {
 
     return (
         <div className="shadow-xl ">
+
+            {/* top header */}
             <section className=" flex md:justify-evenly md:items-center md:flex-row flex-col my-3">
+                {/* site name */}
                 <div className=" text-center">
                     <NavLink to="/home" className=" text-2xl font-bold no-underline text-black" >BD-HealthCare</NavLink>
                 </div>
+                {/* information */}
                 <div className=" md:w-3/6 flex md:justify-evenly md:items-center md:flex-row flex-col ">
                     <div className="flex justify-evenly md:py-0 py-3">
                         <div className=" md:flex items-center justify-center border-r border-gray-500 pr-7 ">
@@ -34,6 +38,7 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
+                    {/* user login info */}
                     <div className="flex items-center justify-center mt-0 sm:mt-5 ">
                         {user.email ? <div >
                             <button onClick={logOut} className="flex items-center no-underline text-white font-semibold mr-4 bg-blue-900 px-3 py-2 rounded-lg">
@@ -81,6 +86,8 @@ const Header = () => {
                 </div>
             </section>
             <hr className=" w-4/5 mx-auto" />
+
+            {/* navbar menu */}
             <section className=" flex justify-evenly items-center md:flex-row flex-col-reverse py-4">
                 <div className=" md:w-6/12 md:flex justify-between items-center w-full  ">
                     <Navbar collapseOnSelect expand="lg">
@@ -98,11 +105,13 @@ const Header = () => {
                         </Container>
                     </Navbar>
                 </div>
+                {/* social link */}
                 <div className="flex items-center ">
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-3 cursor-pointer"><FaFacebookF className="text-sm text-white " /></span>
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-3 cursor-pointer"><FaYoutube className="text-sm text-white " /></span>
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-3 cursor-pointer"><FaLinkedinIn className="text-sm text-white " /></span>
                     <span className=" bg-green-400 rounded-full w-8 h-8 p-2 mr-10 cursor-pointer"><AiOutlineGooglePlus className="text-sm text-white " /></span>
+                    {/* registration icon */}
                     <OverlayTrigger overlay={<Tooltip id="tooltip-disabled" >Register</Tooltip>}>
                         <span className="d-inline-block">
                             <NavLink to="/register" className=" text-2xl text-black"><FaRegUser /></NavLink>

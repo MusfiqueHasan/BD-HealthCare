@@ -4,6 +4,7 @@ import './CommonPage.css'
 const CommonPage = (props) => {
     return (
         <div>
+            {/* common page for some section */}
             <div className="common-banner flex justify-center items-center">
                 <div>
                     <p className="text-white text-4xl font-semibold">{props.title}</p>
