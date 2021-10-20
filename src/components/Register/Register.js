@@ -11,23 +11,23 @@ const Register = () => {
     
     return (
         <div>
-            <section className="flex flex-col justify-center items-center pt-24 ">
+            <section className="flex flex-col justify-center items-center pt-24 md:mx-0 mx-4 ">
                 <p className="text-green-400 text-2xl font-bold uppercase">Register</p>
-                <p className="font-semibold text-4xl">Join us to get all Access</p>
-                <p className="w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
+                <p className="font-bold text-xl md:text-4xl">Join us to get all Access</p>
+                <p className="md:w-2/5 md:text-center text-justify text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
             </section>
-            <form className="my-8 mx-72 flex flex-col justify-center items-center" >
+            <form className="my-8 md:mx-72 flex flex-col justify-center items-center" >
                 <input
-                    className="py-2 px-3 mt-1 w-2/5 rounded-full border-2" placeholder="name" defaultValue={user.displayName} {...register("name")} />
+                    className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2" placeholder="name" defaultValue={user.displayName} {...register("name")} />
 
                 <input
                     
-                    className="py-2 px-3 mt-1 w-2/5 rounded-full border-2" placeholder="email" defaultValue={user.email} {...register("email", { required: true })} />
+                    className="py-2 px-3 mt-1 w-10/12 md:w-2/5  rounded-full border-2" placeholder="email" defaultValue={user.email} {...register("email", { required: true })} />
                 
                 <input
                     type="password"
                    
-                    className="py-2 px-3 mt-1 w-2/5 rounded-full border-2" placeholder="password" defaultValue="" {...register("password")} />                
+                    className="py-2 px-3 mt-1 w-10/12 md:w-2/5 rounded-full border-2" placeholder="password" defaultValue="" {...register("password")} />                
 
                 
                 

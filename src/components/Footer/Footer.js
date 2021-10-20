@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 import './Footer.css'
 const Footer = () => {
     return (
-        <div className=" footer px-36 py-24 mt-60">
-            <div className=" grid grid-cols-3 gap-x-8">
+        <div className=" footer md:px-36 px-8 py-24 mt-60">
+            <div className=" grid md:grid-cols-3 grid-cols-1 md:gap-x-8 gap-x-2">
 
-                <div className="">
+                <div className=" md:pb-0 pb-8">
                     <p className=" text-white text-3xl font-bold mb-4">BD-HealthCare</p>
                     <p className=" text-gray-400 text-justify mb-3">Regular health exams and tests can help find problems before they start. They also can help find problems early, when your chances for treatment and cure are better.</p>
                     <div className="flex items-center ">
@@ -19,7 +19,7 @@ const Footer = () => {
 
                     </div>
                 </div>
-                <div className=" flex flex-col ml-10">
+                <div className=" flex flex-col md:ml-10 md:pb-0 pb-8">
                     <p className=" text-white text-xl font-bold">Contact Details</p>
                     <div className=" flex items-center">
                         <GoLocation className=" text-green-400 mr-3 mb-3" />
@@ -68,7 +68,7 @@ const Footer = () => {
 
 
             </div>
-            <p className=" text-gray-400 text-center mt-20">Copyright © 2021 All rights reserved.</p>
+            <p className=" text-gray-400 text-center md:mt-20 mt-10">Copyright © 2021 All rights reserved.</p>
         </div>
 
 

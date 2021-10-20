@@ -8,7 +8,7 @@ const DoctorsDetails = ({ doctor }) => {
         <>
             <Card className=" text-white mb-40">
                 <Card.Img src={img} alt="Card image" />
-                <Card.ImgOverlay className=" bg-blue-900 w-80 h-2/5 mt-96 mx-auto flex flex-col justify-center items-center ">
+                <Card.ImgOverlay className=" bg-blue-900 md:w-80 w-64 h-2/5 md:mt-96 mt-72 mx-auto flex flex-col justify-center items-center ">
                     <Card.Text className="text-green-400 font-bold">{designation}</Card.Text>
                     <Card.Title>{name}</Card.Title>
                     <div className="flex mt-2">

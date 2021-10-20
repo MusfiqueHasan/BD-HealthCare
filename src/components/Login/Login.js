@@ -18,14 +18,14 @@ const Login = () => {
     }
     return (
         <div>
-            <section className="flex flex-col justify-center items-center pt-24 ">
+            <section className="flex flex-col justify-center items-center pt-24 md:mx-0 mx-4  ">
                 <p className="text-green-400 text-2xl font-bold uppercase">Login</p>
-                <p className="font-semibold text-4xl">Join us to get all Access</p>
-                <p className="w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
+                <p className="font-bold text-xl md:text-4xl">Join us to get all Access</p>
+                <p className="md:w-2/5 md:text-center text-justify text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
             </section>
-            <form className="my-8 mx-72 flex flex-col justify-center items-center" onSubmit={handleSubmit(onSubmit)}>
-                <input className="py-2 px-3 mt-1 w-2/5 rounded-full border-2" placeholder="name" defaultValue={user.displayName} {...register("name")} />
-                <input className="py-2 px-3 mt-1 w-2/5 rounded-full border-2" placeholder="email" defaultValue={user.email} {...register("email", { required: true })} />
+            <form className="my-8 md:mx-72 flex flex-col justify-center items-center" onSubmit={handleSubmit(onSubmit)}>
+                <input className="py-2 px-3 mt-1 md:w-2/5 w-10/12 rounded-full border-2" placeholder="name" defaultValue={user.displayName} {...register("name")} />
+                <input className="py-2 px-3 mt-1 md:w-2/5 w-10/12 rounded-full border-2" placeholder="email" defaultValue={user.email} {...register("email", { required: true })} />
                 <p className="mt-2">If you have not any account? <Link to="/register">Register</Link> </p>
                 <input className="py-2 px-10 mt-3 bg-green-400 text-white font-semibold rounded-full" type="submit" />
                 <button

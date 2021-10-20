@@ -14,28 +14,28 @@ const Appointment = () => {
         <>
             <section className="flex flex-col justify-center items-center pt-24 ">
                 <p className="text-green-400 text-2xl font-bold uppercase">Appointment</p>
-                <p className="font-semibold text-4xl">To get an Appointment </p>
-                <p className="w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
+                <p className="md:font-semibold font-bold text-xl md:text-4xl">To get an Appointment </p>
+                <p className="md:w-2/5 text-center text-gray-500">Medical services means medical, surgical, dental, x-ray, ambulance, hospital, professional nursing, and funeral services.</p>
             </section>
-            <section className=" grid grid-cols-2 px-32">
-                <div className=" px-16 py-10 border-2 m-14 shadow-xl">
+            <section className=" grid md:grid-cols-2 md:px-32">
+                <div className=" md:px-16 py-10 border-2 md:m-14 m-6 shadow-xl">
                     <p className=" text-center font-bold text-3xl mb-4 ">Calender</p>
                     <Calendar
                         onChange={onChange}
                         value={date}
                     />
                 </div>
-                <form className="my-8 flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+                <form className="my-8 flex flex-col md:items-stretch items-center " onSubmit={handleSubmit(onSubmit)}>
                     <input className="py-3 px-4 mt-1 w-5/6  border-2" placeholder="name" defaultValue={user.displayName} {...register("name")} />
                     <input className="py-3 px-4 mt-3 w-5/6  border-2" placeholder="email" defaultValue={user.email} {...register("email", { required: true })} />
-                    <div>
-                        <input className="py-3 px-4 mt-3 w-2/5 border-2" placeholder="Phone" defaultValue="" {...register("phone")} />
-                        <input className="py-3 px-4 mt-3 ml-6 w-2/5 border-2" placeholder="Date" Value={date.toLocaleString()} />
+                    <div className=" w-full flex md:flex-row flex-col items-center">
+                        <input className="py-3 px-4 mt-3 md:w-2/5 w-5/6 border-2" placeholder="Phone" defaultValue="" {...register("phone")} />
+                        <input className="py-3 px-4 mt-3 md:ml-6 md:w-2/5 w-5/6 border-2" placeholder="Date" Value={date.toLocaleString()} />
                     </div>
 
 
-                    <div >
-                        <select className="p-3 mt-3 w-2/5 border-2" {...register("category")}>
+                    <div className=" w-full flex md:flex-row flex-col items-center" >
+                        <select className="p-3 mt-3 md:w-2/5 w-5/6 border-2" {...register("category")}>
                             <option value=""> Select Services </option>
                             <option value="">Eye Care</option>
                             <option value="">Medical Checkup</option>
@@ -44,7 +44,7 @@ const Appointment = () => {
                             <option value="">Laboratory Service</option>
                             <option value="B">Vaccination</option>
                         </select>
-                        <select className="p-3 mt-3 ml-6 w-2/5 border-2" {...register("category")}>
+                        <select className="p-3 mt-3 md:ml-6 md:w-2/5 w-5/6 border-2" {...register("category")}>
                             <option value=""> Select Doctors </option>
                             <option value="A">Dr. Ryley Mueller</option>
                             <option value="B">Dr. Elisa Hodges</option>

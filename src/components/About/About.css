@@ -1,13 +1,4 @@
-.about-bottom{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    margin: 100px 200px;
-}
 
-.about-bottom-details{
-    display: flex;
-    flex-direction: column;
-}
 
 .bottom-details i{
    margin: 15px;
